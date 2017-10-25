@@ -1,0 +1,288 @@
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Variables
+@import "variables";
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+    margin-bottom: 3rem;
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0, 0, 0, .1);
+    box-shadow: inset 0 -.1rem .25rem rgba(0, 0, 0, .1);
+    padding-bottom: 3px !important;
+}
+
+
+/* Nav links */
+
+.nav-link {
+    position: relative;
+    padding: 1rem;
+    font-weight: 500;
+    color: #cdddeb;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+
+/* Active state gets a caret at the bottom */
+
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-link.active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -.3rem;
+    vertical-align: middle;
+    content: "";
+    border-right: .3rem solid transparent;
+    border-bottom: .3rem solid;
+    border-left: .3rem solid transparent;
+}
+
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    border-bottom: .05rem solid #eee;
+}
+
+.blog-title {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.blog-description {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+@media (min-width: 40em) {
+    .blog-title {
+        font-size: 3.5rem;
+    }
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-masthead {
+    padding: 10px 0px 10px 0px;
+}
+
+
+/* Sidebar modules for boxing content */
+
+.sidebar-module {
+    padding: 1rem;
+    /*margin: 0 -1rem 1rem;*/
+}
+
+.sidebar-module-inset {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: .25rem;
+}
+
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Pagination */
+
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+
+.blog-pagination>.btn {
+    border-radius: 2rem;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+    margin-bottom: 4rem;
+}
+
+.blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+}
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
+
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Dropdown Button */
+
+.dropbtn {
+    cursor: pointer;
+    position: relative;
+    padding: 1rem;
+    font-weight: 500;
+    color: #cdddeb;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+.show {
+    display: block;
+}
+
+.post-replies {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-body>div>a:first-child {
+    border-top: none;
+}
+
+.panel-body>div>a {
+    border-right: none;
+    border-left: none;
+}
+
+.list-group {
+    margin-bottom: 0px
+}
+
+.message-panel {
+    padding: 10px;
+}
+
+
+/* Helpers */
+
+.move-right {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.level {
+    display: flex;
+    align-items: center;
+}
+
+.flex {
+    flex: 1;
+}
+
+.mr-1 {
+    margin-right: 1em;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.avatar-rounded {
+    border-radius: 25px;
+    width: 32px;
+    height: 32px;
+}
