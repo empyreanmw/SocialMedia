@@ -5,7 +5,7 @@
         class="modal-prevent" 
         data-toggle="popover"  data-trigger="hover"  
         data-html = "true" 
-        data-content="ada"
+        data-content="Put some user info here."
         data-placement="bottom" 
         :href="'/profiles/' + data.name">
         {{data.name}} &nbsp;
