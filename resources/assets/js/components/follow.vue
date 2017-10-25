@@ -17,7 +17,7 @@
         {
             classes()
             {
-                return ['btn', 'btn-xs', this.isFollowing ? 'btn-primary' : 'btn-default' ];
+                return ['modal-prevent', 'btn', 'btn-xs', this.isFollowing ? 'btn-primary' : 'btn-default' ];
             },
 
             buttonText()

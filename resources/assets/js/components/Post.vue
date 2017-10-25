@@ -3,7 +3,7 @@
 		<a v-if="postShow" class="panel panel-default list-group-item pointer test" data-toggle="modal" :data-target="'#'+ data.id" style="margin-bottom: 10px;">
 			<div class="panel-body" id="test">
 				<div class="level" style="margin-bottom: 10px">
-				<username-link :data="data.owner"></username-link>
+				<username-link @mouseover="alert()" :data="data.owner"></username-link>
 				
 					<small class="flex"> {{ago}}</small> 
 					<div class="dropdown">
@@ -108,6 +108,11 @@ export default {
 			axios.delete('/posts/' + this.data.id + '/delete');
 			this.$emit('deleted', this.data.id);
 			flash('Your post has been removed!', 'alert-success');
+		},
+
+		alert()
+		{
+			alert("gi");
 		},
 
 		getCurrentUrl()
