@@ -9,7 +9,7 @@
 
 	<div class="col-sm-6 blog-main">
 		<div class="level">
-			<h2 class="flex">{{$user->name}}</h2>
+			<h2 class="flex">{{$user->display_name}}</h2>
 			@if(!Auth::guest() && auth()->user()->id != $user->id)
 			<follow :data="{{$user}}"></follow>
 			@endif

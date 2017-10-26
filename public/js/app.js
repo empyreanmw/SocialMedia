@@ -57818,7 +57818,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -58198,16 +58197,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "margin-bottom": "10px"
     }
-  }, [_c('img', {
-    staticClass: "avatar-rounded",
+  }, [_c('username-link', {
     attrs: {
-      "src": '/storage/' + _vm.data.owner.avatar_path
+      "data": _vm.data.owner
     }
-  }), _vm._v("     \n\t\t"), _c('a', {
-    attrs: {
-      "href": '/profiles/' + _vm.data.owner.name
-    }
-  }, [_vm._v(_vm._s(_vm.data.owner.name) + "  ")]), _vm._v(" "), _c('small', {
+  }), _vm._v(" "), _c('small', {
     staticClass: "flex"
   }, [_vm._v(" " + _vm._s(_vm.ago))]), _vm._v(" "), _c('div', {
     staticClass: "dropdown"
@@ -58220,7 +58214,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.remove()
       }
     }
-  }, [_vm._v("Delete reply")])]) : _vm._e(), _vm._v(" "), _vm._m(1)])])]), _vm._v(" "), _c('p', {
+  }, [_vm._v("Delete reply")])]) : _vm._e(), _vm._v(" "), _vm._m(1)])])], 1), _vm._v(" "), _c('p', {
     domProps: {
       "innerHTML": _vm._s(_vm.data.body)
     }
@@ -60380,11 +60374,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('username-link', {
     attrs: {
       "data": _vm.data.owner
-    },
-    on: {
-      "mouseover": function($event) {
-        _vm.alert()
-      }
     }
   }), _vm._v(" "), _c('small', {
     staticClass: "flex"
@@ -60440,18 +60429,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "margin-bottom": "10px"
     }
-  }, [_c('img', {
-    staticClass: "avatar-rounded",
+  }, [_c('username-link', {
     attrs: {
-      "src": '/storage/' + _vm.data.owner.avatar_path
+      "data": _vm.data.owner
     }
-  }), _vm._v("     \n\t\t\t\t\t\t\t"), _c('a', {
-    attrs: {
-      "href": '/profiles/' + _vm.data.owner.name
-    }
-  }, [_vm._v(_vm._s(_vm.data.owner.name) + "  ")]), _vm._v(" "), _c('small', {
+  }), _vm._v(" "), _c('small', {
     staticClass: "flex"
-  }, [_vm._v(" " + _vm._s(_vm.ago))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.ago))]), _vm._v(" "), _c('div', {
     staticClass: "dropdown"
   }, [_vm._m(2), _vm._v(" "), _c('ul', {
     staticClass: "dropdown-menu"
@@ -60460,7 +60444,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.removePost
     }
-  }, [_vm._v("Delete post")])]) : _vm._e()])])]), _vm._v(" "), _c('p', {
+  }, [_vm._v("Delete post")])]) : _vm._e()])])], 1), _vm._v(" "), _c('p', {
     domProps: {
       "innerHTML": _vm._s(_vm.data.body)
     }
@@ -61766,6 +61750,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -61783,12 +61770,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', [_c('img', {
+  return _c('div', [_c('div', {
+    on: {
+      "mouseleave": function($event) {
+        _vm.showHover = false
+      }
+    }
+  }, [_c('img', {
     staticClass: "avatar-rounded",
     attrs: {
       "src": '/storage/' + _vm.data.avatar_path
     }
-  }), _vm._v("     \r\n\t\t"), _c('a', {
+  }), _vm._v("     \r\n\t\t    "), _c('a', {
     staticClass: "modal-prevent",
     attrs: {
       "href": '/profiles/' + _vm.data.name
@@ -61798,7 +61791,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.showHover = true
       }
     }
-  }, [_vm._v("\r\n        " + _vm._s(_vm.data.name) + "  \r\n        ")])]), _vm._v(" "), (_vm.showHover) ? _c('div', {
+  }, [_vm._v("\r\n        " + _vm._s(_vm.data.display_name) + "  \r\n        ")]), _vm._v(" "), _c('small', {
+    staticClass: "flex"
+  }, [_vm._v(" @" + _vm._s(_vm.data.name) + " -    ")]), _vm._v(" "), (_vm.showHover) ? _c('div', {
     staticClass: "panel panel-default",
     staticStyle: {
       "padding": "10px",
@@ -61806,9 +61801,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "z-index": "1"
     },
     on: {
-      "mouseover": function($event) {
-        _vm.showHover = true
-      },
       "mouseleave": function($event) {
         _vm.showHover = false
       }
@@ -61840,7 +61832,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "top": "60px",
       "font-size": "15px"
     }
-  }, [_vm._v(_vm._s(_vm.data.name))]), _vm._v(" "), _c('ul', {
+  }, [_vm._v(_vm._s(_vm.data.display_name))]), _vm._v(" "), _c('ul', {
     staticStyle: {
       "list-style": "none",
       "display": "table",
@@ -61887,7 +61879,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#657786",
       "font-weight": "bold"
     }
-  }, [_vm._v("Posts")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.data.postCount))])])])])])]) : _vm._e()])
+  }, [_vm._v("Posts")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.data.postCount))])])])])])]) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

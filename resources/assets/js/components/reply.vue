@@ -1,8 +1,7 @@
 <template>
 	<div style="margin-bottom: 10px;    border-bottom: 1px solid #e6ecf0;">
 		<div class="level" style="margin-bottom: 10px;">
-			<img class="avatar-rounded" :src="'/storage/'+data.owner.avatar_path">   &nbsp; 
-			<a  :href="'/profiles/' + data.owner.name">{{data.owner.name}} &nbsp;</a>
+		<username-link :data="data.owner"></username-link>
 			<small class="flex"> {{ago}}</small> 
 			<div class="dropdown">
 				<a class="dropdown-toggle pointer"  data-toggle="dropdown"><i class="fa fa-caret-down" aria-hidden="true"></i></a>

@@ -5,8 +5,8 @@
     @foreach($peopleYouMayKnow as $user)
         <div class="level">
          <div class="flex">
-         	<img id="avatar" class="avatar-rounded" src="{{asset('storage/'.$user->avatar_path)}}"> &nbsp;
-			<a class="flex" href="{{route('profile', $user->name)}}"> {{$user->name}}</a> <br>       
+         							<username-link :data="{{$user}}"></username-link>
+     
          </div>
           <follow :data="{{$user}}"></follow>
         </div>

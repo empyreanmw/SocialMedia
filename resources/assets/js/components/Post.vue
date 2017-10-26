@@ -3,7 +3,7 @@
 		<a v-if="postShow" class="panel panel-default list-group-item pointer test" data-toggle="modal" :data-target="'#'+ data.id" style="margin-bottom: 10px;">
 			<div class="panel-body" id="test">
 				<div class="level" style="margin-bottom: 10px">
-				<username-link @mouseover="alert()" :data="data.owner"></username-link>
+				<username-link  :data="data.owner"></username-link>
 				
 					<small class="flex"> {{ago}}</small> 
 					<div class="dropdown">
@@ -31,9 +31,9 @@
 					<div class="modal-body">
 						<div class="panel-body">
 							<div class="level" style="margin-bottom: 10px">
-								<img class="avatar-rounded" :src="'/storage/'+data.owner.avatar_path">   &nbsp; 
-								<a  :href="'/profiles/' + data.owner.name">{{data.owner.name}} &nbsp;</a>
-								<small class="flex"> {{ago}}</small> 
+							<username-link :data="data.owner"></username-link>
+							
+								<small class="flex">{{ago}}</small> 
 								<div class="dropdown">
 									<a class="dropdown-toggle pointer"  data-toggle="dropdown"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
 									<ul class="dropdown-menu">
