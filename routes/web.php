@@ -40,6 +40,9 @@ Route::get('/profiles/{user}/messages/newMessage', 'MessagesController@newMessag
 Route::post('/profiles/{user}/messages/newMessage/create', 'MessagesController@store');
 Route::post('/profiles/{user}/messages/{message}/createReply', 'MessagesController@createReply');
 Route::post('/profiles/{user}/avatar', 'UserAvatarController@store');
+Route::get('/profiles/{user}/followers', 'FollowersController@displayFollowers');
+Route::get('/profiles/{user}/following', 'FollowersController@displayFollowing');
+
 
 Route::get('api/users', 'UsersController@index');
 

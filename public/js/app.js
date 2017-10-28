@@ -26903,6 +26903,7 @@ Vue.component('profile-info', __webpack_require__(183));
 Vue.component('flash', __webpack_require__(186));
 Vue.component('follow', __webpack_require__(130));
 Vue.component('username-link', __webpack_require__(196));
+Vue.component('user-info-popup', __webpack_require__(213));
 
 Vue.prototype.$eventHub = new Vue(); // Global event bus
 new Vue({
@@ -61703,40 +61704,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Follow_vue__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Follow_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Follow_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserInfoPopup_vue__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserInfoPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__UserInfoPopup_vue__);
 //
 //
 //
@@ -61793,17 +61762,159 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("\r\n        " + _vm._s(_vm.data.display_name) + "  \r\n        ")]), _vm._v(" "), _c('small', {
     staticClass: "flex"
-  }, [_vm._v(" @" + _vm._s(_vm.data.name) + " -    ")]), _vm._v(" "), (_vm.showHover) ? _c('div', {
-    staticClass: "panel panel-default",
+  }, [_vm._v(" @" + _vm._s(_vm.data.name) + " -    ")]), _vm._v(" "), (_vm.showHover) ? _c('user-info-popup', {
     staticStyle: {
-      "padding": "10px",
       "position": "absolute",
       "z-index": "1"
+    },
+    attrs: {
+      "data": _vm.data
     },
     on: {
       "mouseleave": function($event) {
         _vm.showHover = false
       }
+    }
+  }) : _vm._e()], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-7e09f222", module.exports)
+  }
+}
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(214),
+  /* template */
+  __webpack_require__(215),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\UserInfoPopup.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] UserInfoPopup.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-00cfe4a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-00cfe4a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Follow_vue__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Follow_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Follow_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+    data: function data() {
+        return {};
+    }
+});
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "panel panel-default",
+    staticStyle: {
+      "padding": "10px",
+      "z-index": "1",
+      "max-width": "300px"
     }
   }, [_c('div', {
     staticClass: "level"
@@ -61824,19 +61935,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticStyle: {
-      "margin-top": "30px"
+      "margin-top": "10px"
     }
   }, [_c('strong', {
     staticStyle: {
-      "position": "absolute",
-      "top": "60px",
       "font-size": "15px"
     }
-  }, [_vm._v(_vm._s(_vm.data.display_name))]), _vm._v(" "), _c('ul', {
+  }, [_vm._v(_vm._s(_vm.data.display_name))]), _c('br'), _vm._v(" "), _c('small', [_vm._v("@" + _vm._s(_vm.data.name))]), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "margin-top": "5px"
+    }
+  }, [_c('p', [_vm._v("\n            " + _vm._s(_vm.data.data.about) + "\n          ")])]), _vm._v(" "), _c('ul', {
     staticStyle: {
       "list-style": "none",
       "display": "table",
-      "padding": "0px"
+      "padding": "0px",
+      "margin-top": "20px"
     }
   }, [_c('li', {
     staticStyle: {
@@ -61845,9 +61959,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('a', {
     attrs: {
-      "href": "#"
+      "href": '/profiles/' + _vm.data.name + '/following'
     }
   }, [_c('span', {
+    staticClass: "modal-prevent",
     staticStyle: {
       "color": "#657786",
       "font-weight": "bold"
@@ -61859,9 +61974,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('a', {
     attrs: {
-      "href": "#"
+      "href": '/profiles/' + _vm.data.name + '/followers'
     }
   }, [_c('span', {
+    staticClass: "modal-prevent",
     staticStyle: {
       "color": "#657786",
       "font-weight": "bold"
@@ -61879,21 +61995,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "#657786",
       "font-weight": "bold"
     }
-  }, [_vm._v("Posts")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.data.postCount))])])])])])]) : _vm._e()])])
+  }, [_vm._v("Posts")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.data.postCount))])])])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7e09f222", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-00cfe4a4", module.exports)
   }
 }
-
-/***/ }),
-/* 199 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

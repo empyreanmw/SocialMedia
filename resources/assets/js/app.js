@@ -26,6 +26,8 @@ Vue.component('profile-info', require('./components/ProfileInfo.vue'));
 Vue.component('flash', require('./components/Flash.vue'));
 Vue.component('follow', require('./components/Follow.vue'));
 Vue.component('username-link', require('./components/UsernameLink.vue'));
+Vue.component('user-info-popup', require('./components/UserInfoPopup.vue'));
+
 
 
 

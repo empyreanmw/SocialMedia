@@ -5,13 +5,13 @@
    <div style="margin-top: 10px">
     <ul style="list-style: none; display: table; padding: 0px; "> 
       <li style="float: left; margin-right: 15px">
-        <a href="#">
+        <a href="/profiles/{{auth()->user()->name}}/following">
           <span style="color:#657786; font-weight: bold">Following</span> <br>
           <span>{{auth()->user()->followingCount}}</span>
         </a>
       </li>
       <li style="float: left; margin-right: 15px" >
-        <a href="#">
+        <a href="/profiles/{{auth()->user()->name}}/followers">
           <span style="color:#657786; font-weight: bold">Followers</span> <br>
           <span>{{auth()->user()->followersCount}}</span>
         </a>

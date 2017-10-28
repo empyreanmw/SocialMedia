@@ -24,4 +24,18 @@ class FollowersController extends Controller
     {
         auth()->user()->unFollow(User::find(request('id')));
     }
+
+    public function displayFollowing(User $user)
+    {
+        $users = $user->following()->get();
+
+        return view('profiles.followers', compact('users'));
+    }
+
+    public function displayFollowers(User $user)
+    {
+        $users = $user->followers()->get();
+
+        return view('profiles.followers', compact('users'));
+    }
 }
