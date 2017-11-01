@@ -22,7 +22,7 @@
 
 		@include('profiles.replies')
 		
-		<flash message="{{session('flash')}}" type="{{session('type')}}"></flash>
+		<flash message="{{session('flash')}}"></flash>
 	</div>
 
 	@include('home.right-sidebar')

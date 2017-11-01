@@ -38,8 +38,8 @@ new Vue({
     el: '#app',
 });
 
-window.flash = function(message, type) {
-    Vue.prototype.$eventHub.$emit('flash', message, type);
+window.flash = function(message, type = "alert-success") {
+    Vue.prototype.$eventHub.$emit('flash', { message, type });
 }
 
 $('.test').on('click', function(e) {

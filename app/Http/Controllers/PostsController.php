@@ -8,6 +8,8 @@ use App\User;
 use App\Trend;
 use App\Utilities\wordSearch;
 use App\Events\Mentionable;
+use App\Inspections\Spam;
+use App\Rules\SpamDetection;
 
 
 class PostsController extends Controller
@@ -30,21 +32,24 @@ class PostsController extends Controller
 		return view ('home.show', compact('posts'));
 	}
 
-	public function store(Request $request, User $user)
+	public function store(Request $request, User $user, Spam $spam)
 	{
-		$this->validate($request, [
-			'body' => 'required'
-		]);
 
-		$post = Post::create([
-			'body' => request('body'),
-			'user_id' => auth()->id(),
-			'profile_id' => $user->id		
-		]);
+			$this->validate($request, [
+				'body' => ['required', new SpamDetection($spam)]
+			]);
+	
+			$post = Post::create([
+				'body' => request('body'),
+				'user_id' => auth()->id(),
+				'profile_id' => $user->id		
+			]);
+	
+			$post->createTrend(request('body'));
+	
+			event(new Mentionable($post->load('owner', 'replies')));
 
-		$post->createTrend(request('body'));
 
-		event(new Mentionable($post->load('owner', 'replies')));
 		
 		if (request()->expectsJson()){
 			return $post->load('owner');

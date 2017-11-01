@@ -5,22 +5,23 @@
 </template>
 <script>
 export default {
-	props: ['message','type'],
+	props: ['message'],
 	data() {
 		return {
 			body: '',
 			show: false,
+			type: 'alert-success'
 		};
 	},
 
 	created(){
 		if (this.message){
-			this.flash(this.message, this.type);
+			this.flash(this.message);
 		}
 
 		let oldThis = this;
-		this.$eventHub.$on('flash', function(message, type){
-			oldThis.flash(message,type);
+		this.$eventHub.$on('flash', function(data){
+			oldThis.flash(data);
 		})
 	},
 
@@ -33,10 +34,10 @@ export default {
 
 
 	methods: {
-		flash(message, type) {
-			this.body = message;
+		flash(data) {
+			this.body = data.message;
 			this.show = true;
-			this.type = type;
+			this.type = data.type;
 			this.hide();
 		},
 

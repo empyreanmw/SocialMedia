@@ -24,6 +24,9 @@ export default {
     add() {
       axios
         .post("/posts/" + this.data.name + "/create", { body: this.body })
+        .catch(error => {
+          flash(error.response.data.errors.body[0], 'alert-danger');
+        })
         .then(response => {
           this.body = "";
           this.$eventHub.$emit("create", response.data);
