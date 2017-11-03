@@ -58387,7 +58387,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this = this;
 
 			axios.post(this.endpoint, { body: this.body, post_id: this.postId }).catch(function (error) {
-				flash(error.response.data, 'alert-danger');
+				flash(error.response.data.errors.body[0], 'alert-danger');
 			}).then(function (response) {
 				_this.body = '';
 				_this.$emit('created', response.data);

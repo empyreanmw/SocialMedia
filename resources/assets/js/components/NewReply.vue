@@ -43,8 +43,8 @@ export default{
 		addReply(){
 			axios.post(this.endpoint, {body: this.body, post_id: this.postId})
 			 .catch(error => {
-         		 flash(error.response.data, 'alert-danger')
-       		 })
+        	  flash(error.response.data.errors.body[0], 'alert-danger');
+      		  })
 			.then(response => {
 				this.body = '';
 				this.$emit('created', response.data);

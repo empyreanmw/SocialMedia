@@ -3,5 +3,5 @@
 
     interface Inspections
     {
-        public function detect($body);
+        public function detect($body, $model);
     }

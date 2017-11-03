@@ -36,7 +36,7 @@ class PostsController extends Controller
 	{
 
 			$this->validate($request, [
-				'body' => ['required', new SpamDetection($spam)]
+				'body' => ['required', new SpamDetection($spam, $user)]
 			]);
 	
 			$post = Post::create([

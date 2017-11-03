@@ -50,6 +50,12 @@ class User extends Authenticatable
         return $this->hasMany(Post::class)->latest();
     }
 
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+      
+    }
+
     public function following()
     {
         return $this->belongsToMany('App\User', 'friend_user', 'user_id', 'friend_id')->with('posts');

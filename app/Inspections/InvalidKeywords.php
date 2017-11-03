@@ -8,14 +8,19 @@ use App\Inspections\Inspections;
 class InvalidKeywords implements Inspections
 {
     protected $keywords = [
-        'Spam'
+        'Spam',
+        'Test'
     ];
 
-    public function detect($body)
+    public function detect($body, $model)
     {
         foreach($this->keywords as $keyword)
         {
-          return !str_contains($body, $keyword);
+         if(str_contains($body, $keyword))
+         {
+            return false;
+         }
         }
+        return true;
     }
 }

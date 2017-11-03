@@ -3,23 +3,18 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use App\Inspections\Spam;
+use App\Inspections\FrequentPosting;
 
-class SpamDetection implements Rule
+class PostingTooFrequently implements Rule
 {
     /**
      * Create a new rule instance.
      *
      * @return void
-     * 
      */
-    protected $spam;
-    protected $model;
-
-    public function __construct(Spam $spam, $model)
+    public function __construct()
     {
-        $this->spam = $spam;
-        $this->model = $model;
+        //
     }
 
     /**
@@ -31,7 +26,7 @@ class SpamDetection implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $this->spam->check($value, $this->model);
+        return FrequentPosting::detect();
     }
 
     /**
@@ -41,6 +36,6 @@ class SpamDetection implements Rule
      */
     public function message()
     {
-        return 'Your post contains spam!';
+        return 'You are posting too frequently!';
     }
 }

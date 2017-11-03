@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Inspections;
-use App\Inspections\InvalidKeywords;
 
 class Spam
 {
     protected $detections = [
         InvalidKeywords::class,
-        KeyHeldDown::class
+        KeyHeldDown::class,
+        DoublePosts::class
     ];
 
-    public function check($body)
+    public function check($body, $model)
     {
         foreach ($this->detections as $detection)
         {
           $detection = new $detection();
 
-          if($detection->detect($body) == false)
+          if($detection->detect($body, $model) == false)
           {
             return false;
           }

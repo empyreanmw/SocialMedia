@@ -7,18 +7,17 @@ use App\Post;
 use App\Notifications\Reply;
 use App\Replies;
 use App\Inspections\Spam;
+use App\Rules\SpamDetection;
+use App\Rules\PostingTooFrequently;
 
 class ReplyController extends Controller
 {
 	public function store(Request $request, Spam $spam)
 	{
-		try {
 			
 			$this->validate($request, [
-				'body' => 'required'
+				'body' => ['required', new SpamDetection($spam, 'replies'), new PostingTooFrequently()]				
 			]);
-			
-			$spam->check(request('body'));
 	
 			$post = Post::where('id', request('post_id'))->get()->first();
 			$reply = $post->createReply(request('body'));
@@ -27,15 +26,8 @@ class ReplyController extends Controller
 			{
 				$post->owner->notify(new Reply($post->load('owner'), $reply));
 			}
-		}
-
-		catch (\Exception $e) {
-			
-			return response (
-				$e->getMessage(), 422
-			);
-		}
-
+				
+		
 		if (request()->expectsJson())
 		{
 			return $reply->load('owner');
