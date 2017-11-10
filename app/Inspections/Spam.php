@@ -6,8 +6,7 @@ class Spam
 {
     protected $detections = [
         InvalidKeywords::class,
-        KeyHeldDown::class,
-        DoublePosts::class
+        KeyHeldDown::class
     ];
 
     public function check($body, $model)

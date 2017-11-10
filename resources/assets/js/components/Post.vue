@@ -110,11 +110,6 @@ export default {
 			flash('Your post has been removed!', 'alert-success');
 		},
 
-		alert()
-		{
-			alert("gi");
-		},
-
 		getCurrentUrl()
 		{
 			let url = window.location.pathname;

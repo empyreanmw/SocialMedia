@@ -26980,9 +26980,9 @@ window._ = __webpack_require__(135);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(3);
+    window.$ = window.jQuery = __webpack_require__(3);
 
-  __webpack_require__(136);
+    __webpack_require__(136);
 } catch (e) {}
 
 /**
@@ -27004,9 +27004,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /***/ }),
@@ -60210,6 +60210,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -60219,10 +60222,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 	data: function data() {
 		return {
-			items: this.data
+			items: _.orderBy(this.data, 'id', 'desc'), //set collection in descending order
+			postCount: 0,
+			showPostCount: false,
+			newPosts: []
 		};
 	},
 	mounted: function mounted() {
+		if (window.location.pathname == "/") {
+			this.checkForNewPosts();
+		}
+
 		var oldThis = this;
 		this.$eventHub.$on('create', function (create) {
 			oldThis.add(create);
@@ -60230,19 +60240,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 
-	computed: {
-		reverseItems: function reverseItems() {
-			return this.items.reverse();
-		}
-	},
-
 	methods: {
 		add: function add(post) {
-			this.items.push(post);
+			this.items.unshift(post);
 			flash('Your post has been created!', 'alert-success');
+		},
+		checkForNewPosts: function checkForNewPosts() {
+			var _this = this;
+
+			axios.post('/posts/newposts', { posts: this.items }).then(function (response) {
+				_this.setPostCount(response);
+			});
+
+			setTimeout(this.checkForNewPosts, 10000);
 		},
 		remove: function remove(index) {
 			this.items.splice(index, 1);
+		},
+		loadNewPosts: function loadNewPosts() {
+			var i = 0;
+			for (i = 0; i < _.size(this.newPosts); i++) {
+				this.items.unshift(this.newPosts[i]);
+			}
+
+			this.postCount = 0;
+			this.newPosts = [];
+			this.showPostCount = false;
+		},
+		setPostCount: function setPostCount(response) {
+			this.postCount = _.size(response.data);
+			this.postCount > 0 ? this.showPostCount = true : this.showPostCount = false;
+			this.newPosts = _.orderBy(response.data, 'id', 'asc');
 		}
 	}
 });
@@ -60368,19 +60396,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.$emit('deleted', this.data.id);
 			flash('Your post has been removed!', 'alert-success');
 		},
-		alert: function (_alert) {
-			function alert() {
-				return _alert.apply(this, arguments);
-			}
-
-			alert.toString = function () {
-				return _alert.toString();
-			};
-
-			return alert;
-		}(function () {
-			alert("gi");
-		}),
 		getCurrentUrl: function getCurrentUrl() {
 			var url = window.location.pathname;
 			var array = url.split('/');
@@ -60581,7 +60596,14 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', _vm._l((_vm.items), function(post, index) {
+  return _c('div', [(_vm.showPostCount) ? _c('div', {
+    staticClass: "text-center iddle-posts",
+    on: {
+      "click": function($event) {
+        _vm.loadNewPosts()
+      }
+    }
+  }, [_c('span', [_vm._v(_vm._s(_vm.postCount) + " new posts")])]) : _vm._e(), _vm._v(" "), _vm._l((_vm.items), function(post, index) {
     return _c('div', {
       key: post.id,
       staticClass: "list-group"
@@ -60595,7 +60617,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })], 1)
-  }))
+  })], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -61212,7 +61234,7 @@ if(false) {
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(190)(undefined);
+exports = module.exports = __webpack_require__(218)(undefined);
 // imports
 
 
@@ -61223,88 +61245,7 @@ exports.push([module.i, "\n.alert-flash\r\n{\r\n\tposition: fixed;\r\n\tbottom: 
 
 
 /***/ }),
-/* 190 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
+/* 190 */,
 /* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -61998,6 +61939,103 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
 
 /***/ })
 /******/ ]);

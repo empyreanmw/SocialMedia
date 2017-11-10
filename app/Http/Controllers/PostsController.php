@@ -13,7 +13,10 @@ use App\Rules\SpamDetection;
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 03e45cb... Added a new feature: Autoload posts on home page while iddle
 class PostsController extends Controller
 {
 	public function __construct()
@@ -36,19 +39,18 @@ class PostsController extends Controller
 
 	public function store(Request $request, User $user, Spam $spam)
 	{
-
 			$this->validate($request, [
-				'body' => ['required', new SpamDetection($spam, $user)]
+				'body' => ['required', new SpamDetection($spam, "posts")]
 			]);
-	
 			$post = Post::create([
 				'body' => request('body'),
 				'user_id' => auth()->id(),
 				'profile_id' => $user->id		
 			]);
+
+
 	
 			$post->createTrend(request('body'));
-	
 			event(new Mentionable($post->load('owner', 'replies')));
 
 
@@ -81,8 +83,11 @@ class PostsController extends Controller
 		$latestPostId = collect(request('posts'))->first()['id'];
 		$posts = array();
 
+<<<<<<< HEAD
 		if(!$latestPostId) return 	Post::getFollowingPosts();
 
+=======
+>>>>>>> 03e45cb... Added a new feature: Autoload posts on home page while iddle
 		Post::getFollowingPosts()->each(function($post) use ($latestPostId, &$posts){
 			if($post->id>$latestPostId)
 			{
@@ -90,7 +95,12 @@ class PostsController extends Controller
 			}
 		});
 
+<<<<<<< HEAD
 		return $posts;  
+=======
+		return $posts;
+   
+>>>>>>> 03e45cb... Added a new feature: Autoload posts on home page while iddle
 	}
 
 }

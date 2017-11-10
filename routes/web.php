@@ -20,6 +20,7 @@ Route::get('/trending/{trend}', 'PostsController@trends')->name('trends');
 Route::get('/people', 'HomeController@people');
 Route::post('/posts/{post}/favorite', 'PostsController@favorite');
 Route::delete('/posts/{post}/unfavorite', 'PostsController@unfavorite');
+Route::post('/posts/newposts', 'PostsController@autoLoadNewPosts');
 Route::get('/{user}/notifications', 'NotificationsController@index')->name('notifications');
 
 Route::post('/replies/create', 'ReplyController@store');

@@ -11631,6 +11631,14 @@ button.close {
   padding: 10px;
 }
 
+.iddle-posts {
+  margin-bottom: 5px;
+  background-color: #fff;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* Helpers */
 
 .move-right {

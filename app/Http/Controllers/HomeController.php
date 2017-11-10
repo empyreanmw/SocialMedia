@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -13,15 +14,8 @@ class HomeController extends Controller
     }
 
     public function index()
-    {
-        $friends = auth()->user()->following()->has('posts')->get();
-        $posts = array();
-
-        if (count($friends)) {
-            foreach ($friends as $friend) {
-                $posts[] = $friend->posts;
-            }
-        }
+    {   
+        $posts = Post::getFollowingPosts();
         
         return view('home.show', compact('posts'));
     }

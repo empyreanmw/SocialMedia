@@ -18,16 +18,10 @@ class ProfilesController extends Controller
 	
 	public function show(User $user)
 	{
-		$posts = array();
-		$collection = Post::where('profile_id', $user->id)->get();
+		$posts = Post::where('profile_id', $user->id)->get();
 
 		Redis::zincrby('popularity', 1, $user->name);
-		
-		if ($collection->count()>0)
-		{
-			$posts[0] = $collection;
-		}
-		
+			
 		return view('profiles.show', compact('user', 'posts'));
 	}
 

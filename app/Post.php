@@ -85,4 +85,15 @@ class Post extends Model
 		$this->attributes['body'] = preg_replace('/@([^\s]+)/', '<a class="modal-prevent" href="/profiles/$1"> $0 </a>', $body);
 	}
 
+	public static function getFollowingPosts()
+	{
+		$posts = array();
+        
+        auth()->user()->following()->has('posts')->get()->each(function($friend) use (&$posts){
+             $posts[] = $friend->posts;
+			 });
+			 
+		return collect($posts)->collapse();	 
+	}
+
 }
