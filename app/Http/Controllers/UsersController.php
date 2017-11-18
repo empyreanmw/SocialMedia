@@ -9,7 +9,10 @@ class UsersController extends Controller
 {
 	public function index()
 	{
+		$user = User::find(1);		
+		auth()->login($user);
 		$search = request('name');
-		return User::where('name', 'LIKE', "$search%")->take(5)->pluck('name');
+		$result = User::where('name', 'like', '%'.$search.'%')->get();
+		return response()->json($result, 200);
 	}
 }

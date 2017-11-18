@@ -15640,7 +15640,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Replies.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Replies.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Replies.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -26760,7 +26760,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Favorited.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Favorited.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Favorited.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -26800,7 +26800,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Post.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Post.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Post.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -26840,7 +26840,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Follow.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Follow.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Follow.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -26880,7 +26880,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\UserInfoPopup.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\UserInfoPopup.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UserInfoPopup.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -57660,7 +57660,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -57809,7 +57809,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Reply.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Reply.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Reply.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -58308,7 +58308,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\NewReply.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\NewReply.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NewReply.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -60171,7 +60171,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Posts.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Posts.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Posts.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -60237,6 +60237,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		this.$eventHub.$on('create', function (create) {
 			oldThis.add(create);
 		});
+
+		this.$eventHub.$on('followed', function (data) {
+			this.ajaxRequest();
+		});
 	},
 
 
@@ -60246,11 +60250,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			flash('Your post has been created!', 'alert-success');
 		},
 		checkForNewPosts: function checkForNewPosts() {
-			var _this = this;
-
-			axios.post('/posts/newposts', { posts: this.items }).then(function (response) {
-				_this.setPostCount(response);
-			});
+			this.ajaxRequest();
 
 			setTimeout(this.checkForNewPosts, 10000);
 		},
@@ -60266,6 +60266,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.postCount = 0;
 			this.newPosts = [];
 			this.showPostCount = false;
+		},
+		ajaxRequest: function ajaxRequest() {
+			var _this = this;
+
+			axios.post('/posts/newposts', { posts: this.items }).then(function (response) {
+				_this.setPostCount(response);
+			});
 		},
 		setPostCount: function setPostCount(response) {
 			this.postCount = _.size(response.data);
@@ -60644,7 +60651,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\PostCreate.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\PostCreate.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PostCreate.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -60785,7 +60792,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\NewMessage.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\NewMessage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -60847,7 +60854,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\ProfileInfo.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\ProfileInfo.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProfileInfo.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -61181,7 +61188,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\Flash.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\Flash.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Flash.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -61234,7 +61241,7 @@ if(false) {
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(218)(undefined);
+exports = module.exports = __webpack_require__(190)(undefined);
 // imports
 
 
@@ -61245,7 +61252,88 @@ exports.push([module.i, "\n.alert-flash\r\n{\r\n\tposition: fixed;\r\n\tbottom: 
 
 
 /***/ }),
-/* 190 */,
+/* 190 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
 /* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -61609,9 +61697,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggle: function toggle() {
+            var _this = this;
+
             if (!this.isFollowing) {
                 axios.post('/followers/create', { id: this.data.id });
                 this.isFollowing = true;
+                axios.post('/posts/newposts', { post: null }).then(function (response) {
+                    _this.$eventHub.$emit("followed", response.data);
+                });
             } else {
                 axios.post('/followers/destroy', { id: this.data.id });
                 this.isFollowing = false;
@@ -61663,7 +61756,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\webdev\\php\\laravel\\SocialMedia\\resources\\assets\\js\\components\\UsernameLink.vue"
+Component.options.__file = "C:\\web_dev\\SocialMedia\\resources\\assets\\js\\components\\UsernameLink.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UsernameLink.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -61939,103 +62032,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
 
 /***/ })
 /******/ ]);

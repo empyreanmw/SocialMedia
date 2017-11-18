@@ -15,9 +15,9 @@ use App\Utilities\wordSearch;
 
 class Post extends Model
 {
-	use favoritable, RecordsActivity, Repliable;
+	use favoritable, Repliable;
 
-	protected $appends = ['favoritesCount', 'isFavorited', 'repliesCount', 'favoritesParent'];
+	protected $appends = ['favoritesCount', 'isFavorited', 'repliesCount', 'favoritesParent', 'popularity'];
 
 	protected $guarded = [];
 
@@ -87,6 +87,7 @@ class Post extends Model
 
 	public static function getFollowingPosts()
 	{
+		if(auth()->guest()) return;
 		$posts = array();
         
         auth()->user()->following()->has('posts')->get()->each(function($friend) use (&$posts){
@@ -94,6 +95,11 @@ class Post extends Model
 			 });
 			 
 		return collect($posts)->collapse();	 
+	}
+
+	public function getPopularityAttribute()
+	{
+		return $this->getFavoritesCountAttribute() + $this->getRepliesCountAttribute();
 	}
 
 }

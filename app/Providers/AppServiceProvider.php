@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('home.left-sidebar', function ($view) {
 
-            $trends = Trend::getTrends();
+            $trends = Trend::get();
 
             $view->with(compact('trends'));
         });

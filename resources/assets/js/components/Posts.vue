@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-if="showPostCount" @click="loadNewPosts()" class="text-center iddle-posts">
+		<div v-if="showPostCount"  @click="loadNewPosts()" class="text-center iddle-posts">
 			<span>{{postCount}} new posts</span>
 		</div>
 		<div v-cloak class="list-group" v-for="(post, index) in items" :key="post.id">
@@ -35,6 +35,10 @@ export default{
 		this.$eventHub.$on('create', function(create){
 			oldThis.add(create);
 		});
+
+		this.$eventHub.$on('followed', function(data){
+			this.ajaxRequest();
+		});
 	},
 
 
@@ -46,9 +50,7 @@ export default{
 		
 		checkForNewPosts()
 		{
-			axios.post('/posts/newposts', {posts: this.items}).then(response => {
-				this.setPostCount(response)
-			   });
+			this.ajaxRequest();
 			   
 			setTimeout(this.checkForNewPosts, 10000);
 		},
@@ -68,6 +70,13 @@ export default{
 			this.postCount = 0;
 			this.newPosts = [];
 			this.showPostCount = false;     	
+		},
+
+		ajaxRequest()
+		{
+			axios.post('/posts/newposts', {posts: this.items}).then(response => {
+				this.setPostCount(response)
+			   });
 		},
 
 		setPostCount(response)

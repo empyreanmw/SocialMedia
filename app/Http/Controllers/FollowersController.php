@@ -15,6 +15,7 @@ class FollowersController extends Controller
      */
     public function create()
     {
+
        $followTarget = User::find(request('id')); 
        auth()->user()->follow($followTarget);
        $followTarget->notify(new FollowerNotification(auth()->user()));

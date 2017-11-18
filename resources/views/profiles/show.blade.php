@@ -20,7 +20,7 @@
 		@include('layouts.posts.create')
 		@endif
 
-		@include('profiles.replies')
+		@include('profiles.replies')	
 		
 		<flash message="{{session('flash')}}"></flash>
 	</div>

@@ -13,7 +13,11 @@ class Trend extends Model
 		return $this->belongsToMany(Post::class);
 	}
 
+<<<<<<< HEAD
 	public static function get($search=null)
+=======
+	public static function get()
+>>>>>>> 6f555e7... Added api support for listing Top trends, post and users. Also added support for creating users via API.
 	{
 		return static::where('name', 'like', '%'.$search.'%')->orderBy('post_count', 'DESC')->has('posts')->limit(10)->get();
 	}

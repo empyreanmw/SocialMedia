@@ -30,19 +30,24 @@
 
         methods: {
            toggle()
-		{
-			if (!this.isFollowing)
-			{
-				axios.post('/followers/create', {id: this.data.id});
-				this.isFollowing = true;
-			
-			}
-			else
-			{
-				axios.post('/followers/destroy', {id: this.data.id});				
-				this.isFollowing = false;
-			}
-		}
+		    {
+                if (!this.isFollowing)
+                {
+                    axios.post('/followers/create', {id: this.data.id});
+                    this.isFollowing = true; 
+                    axios.post('/posts/newposts', {post: null}).then(
+                        response=>{
+                        this.$eventHub.$emit("followed", response.data);          
+
+                        }                        
+                    );
+                }
+                else
+                {
+                    axios.post('/followers/destroy', {id: this.data.id});				
+                    this.isFollowing = false;
+                }
+	    	}
 	}
         
     }   

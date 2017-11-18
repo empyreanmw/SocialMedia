@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
     
     Route::post('login', 'Auth\LoginController@login')->middleware('web');   
     Route::post('logout', 'Auth\LoginController@logout')->middleware('web');   
@@ -35,5 +36,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
         Route::post('/', 'TrendsController@index');
     });
 
+=======
+    Route::post('users', 'UsersController@index');
+    Route::get('posts', 'PostsController@popularPosts');
+    Route::get('trends', 'TrendsController@index');
+    Route::post('post/create', 'PostsController@store');
+    Route::post('trends/search', 'TrendsController@search');    
+    Route::post('users/create', 'Auth\RegisterController@register');    
+>>>>>>> 6f555e7... Added api support for listing Top trends, post and users. Also added support for creating users via API.
     
     
