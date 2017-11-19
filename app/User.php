@@ -138,6 +138,7 @@ class User extends Authenticatable
 
     public function getIsFollowingAttribute()
     {
+        if(auth()->guest()) return false;
         return auth()->user()->following()->where('users.id', $this->id)->count() ? true : false;
     }
 }

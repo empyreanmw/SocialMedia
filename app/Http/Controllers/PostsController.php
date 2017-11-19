@@ -12,11 +12,13 @@ use App\Inspections\Spam;
 use App\Rules\SpamDetection;
 
 
+
+
 class PostsController extends Controller
 {
 	public function __construct()
 	{
-		$this->middleware('auth');
+		$this->middleware('auth');	
 	}
 
 	public function trends(Trend $trend)
@@ -51,9 +53,9 @@ class PostsController extends Controller
 
 
 		
-		if (request()->expectsJson()){
-			return $post->load('owner');
-		}
+			if (request()->expectsJson()){
+				return $post->load('owner');
+			}
 
 		return redirect()->back();
 	}
@@ -72,6 +74,23 @@ class PostsController extends Controller
 	public function unfavorite(Post $post)
 	{
 		$post->unfavorite();
+	}
+
+	public function autoLoadNewPosts()
+	{
+		$latestPostId = collect(request('posts'))->first()['id'];
+		$posts = array();
+
+		if(!$latestPostId) return 	Post::getFollowingPosts();
+
+		Post::getFollowingPosts()->each(function($post) use ($latestPostId, &$posts){
+			if($post->id>$latestPostId)
+			{
+				$posts[] = $post;
+			}
+		});
+
+		return $posts;  
 	}
 
 }

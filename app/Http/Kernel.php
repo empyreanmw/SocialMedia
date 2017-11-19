@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Tymon\JWTAuth\Middleware\GetUserFromToken;
 
 class Kernel extends HttpKernel
 {
@@ -32,7 +33,7 @@ class Kernel extends HttpKernel
     \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
     \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-    \App\Http\Middleware\VerifyCsrfToken::class,
+   // \App\Http\Middleware\VerifyCsrfToken::class,
     \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ],
 
@@ -57,5 +58,6 @@ class Kernel extends HttpKernel
     'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     'authUser' => \App\Http\Middleware\ProfileAuth::class,
+    'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class
     ];
 }

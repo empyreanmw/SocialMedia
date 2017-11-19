@@ -13,9 +13,9 @@ class Trend extends Model
 		return $this->belongsToMany(Post::class);
 	}
 
-	public static function getTrends()
+	public static function get($search=null)
 	{
-		return static::orderBy('post_count', 'DESC')->has('posts')->limit(10)->get();
+		return static::where('name', 'like', '%'.$search.'%')->orderBy('post_count', 'DESC')->has('posts')->limit(10)->get();
 	}
 
 	public function getRouteKeyName()
