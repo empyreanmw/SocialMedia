@@ -22,14 +22,8 @@ class PostsController extends Controller
 
 	public function trends(Trend $trend)
 	{
-		$posts = array();
-		$collection = $trend->posts()->latest()->get();
+		$posts = $trend->posts()->latest()->get();
 
-		if ($collection->count()>0)
-		{
-			$posts[0] = $collection;
-		}
-		
 		return view ('home.show', compact('posts'));
 	}
 
@@ -38,18 +32,15 @@ class PostsController extends Controller
 			$this->validate($request, [
 				'body' => ['required', new SpamDetection($spam, "posts")]
 			]);
+
 			$post = Post::create([
 				'body' => request('body'),
 				'user_id' => auth()->id(),
 				'profile_id' => $user->id		
 			]);
 
-
-	
 			$post->createTrend(request('body'));
 			event(new Mentionable($post->load('owner', 'replies')));
-
-
 		
 			if (request()->expectsJson()){
 				return $post->load('owner');
@@ -77,7 +68,7 @@ class PostsController extends Controller
 	public function autoLoadNewPosts()
 	{
 		$latestPostId = collect(request('posts'))->first()['id'];
-		$posts = array();
+		$posts = [];
 
 		if(!$latestPostId) return 	Post::getFollowingPosts();
 
