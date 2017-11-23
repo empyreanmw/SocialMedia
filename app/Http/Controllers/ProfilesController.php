@@ -18,8 +18,7 @@ class ProfilesController extends Controller
 	
 	public function show(User $user)
 	{
-		$posts = Post::where('profile_id', $user->id)->get();
-
+		$posts = Post::where('user_id', $user->id)->get();
 		Redis::zincrby('popularity', 1, $user->name);
 			
 		return view('profiles.show', compact('user', 'posts'));

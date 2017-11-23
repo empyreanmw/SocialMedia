@@ -16,8 +16,8 @@ class HomeController extends Controller
     public function index()
     {   
         $posts = Post::getFollowingPosts();
-        
-        return view('home.show', compact('posts'));
+        $user = auth()->user();
+        return view('home.show', compact('posts', 'user'));
     }
 
     public function people()

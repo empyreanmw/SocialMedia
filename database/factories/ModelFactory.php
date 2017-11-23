@@ -31,8 +31,7 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
   
     return [
        'body' => $faker->paragraph. " #test",
-       'user_id' => $user_id,
-       'profile_id' =>  $user_id
+       'user_id' => $user_id
     ];
 });
 

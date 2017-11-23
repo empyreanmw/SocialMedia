@@ -36,7 +36,6 @@ class PostsController extends Controller
 			$post = Post::create([
 				'body' => request('body'),
 				'user_id' => auth()->id(),
-				'profile_id' => $user->id		
 			]);
 
 			$post->createTrend(request('body'));

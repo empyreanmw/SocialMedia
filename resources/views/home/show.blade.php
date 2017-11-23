@@ -6,7 +6,9 @@
 
 	<div class="col-sm-6 blog-main">
 		
-		
+		@if($user->id == auth()->id())
+		@include('layouts.posts.create')
+		@endif
 		@include('profiles.replies')
 		
 		
