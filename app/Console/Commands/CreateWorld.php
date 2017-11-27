@@ -37,6 +37,8 @@ class CreateWorld extends Command
      */
     public function handle()
     {
+        $this->call('migrate:refresh');
+        
         factory('App\Post', 50)->create()->each(function($post){
             factory('App\Replies',  5)->create(['replied_id' => $post->id]);
         });
