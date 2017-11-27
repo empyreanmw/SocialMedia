@@ -41,6 +41,7 @@ $factory->define(App\Replies::class, function (Faker\Generator $faker) {
             'replied_id' => function () {
                 return factory('App\Post')->create()->id;
             },
+            'replied_type' => 'App\Post',
            'body' => $faker->paragraph,
            'user_id' => function () {
                return factory('App\User')->create()->id;

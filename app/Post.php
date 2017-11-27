@@ -33,8 +33,6 @@ class Post extends Model
 			$post->trends()->where('post_count', 0)->delete();
 
 		}); 
-
-
 	}
 
 	public function owner()
@@ -88,13 +86,15 @@ class Post extends Model
 	public static function getFollowingPosts()
 	{
 		if(auth()->guest()) return;
-		$posts = array();
+		$posts = [];
         
         auth()->user()->following()->has('posts')->get()->each(function($friend) use (&$posts){
              $posts[] = $friend->posts;
 			 });
+
+		$posts = collect($posts)->collapse();
 			 
-		return collect($posts)->collapse();	 
+		return $posts->merge(Post::where('user_id', auth()->id())->get());	 
 	}
 
 	public function getPopularityAttribute()
